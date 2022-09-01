@@ -8,5 +8,5 @@ project_3_name = "Project XYZ"
 project_3_funding = 500
 
 puts "#{project_1_name} has $#{project_1_funding} in funding."
-
-puts "Projects:\n\t#{project_1_name}\n\t#{project_2_name}\n\t#{project_3_name}"
+puts "#{project_2_name} has $#{project_2_funding} in funding."
+puts "#{project_3_name} has $#{project_3_funding} in funding."
