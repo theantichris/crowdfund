@@ -1,16 +1,33 @@
-def project_info(project, funding = 0)
-  "#{project} has $#{funding} in funding."
+class Project
+  def initialize(name, current, target)
+    @name = name
+    @current = current
+    @target = target
+  end
+
+  def add_funds(amount)
+    @current += amount
+    puts "Project #{@name} got more funds!"
+  end
+
+  def remove_funds(amount)
+    @current -= amount
+    puts "Project #{@name} lost some funds!"
+  end
+
+  def to_s
+    "Project #{@name} has $#{@current} in funding towards a goal of $#{@target}."
+  end
 end
 
-project_1_name = "Project ABC"
-project_1_funding = 1000
+project1 = Project.new("LMN", 500, 3000)
+project2 = Project.new("XYZ", 25, 75)
 
-project_2_name = "Project LMN"
-project_2_funding = 2000
+puts project1
+puts project2
 
-project_3_name = "Project XYZ"
-project_3_funding = 500
+project1.remove_funds(25)
+project2.add_funds(25)
 
-puts project_info(project_1_name, project_1_funding)
-puts project_info(project_2_name, project_2_funding)
-puts project_info(project_3_name, project_3_funding)
+puts project1
+puts project2
